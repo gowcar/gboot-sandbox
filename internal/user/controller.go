@@ -2,7 +2,7 @@ package user
 
 import (
 	"fmt"
-	"github.com/gowcar/gboot"
+	"github.com/gofiber/fiber/v2"
 	"github.com/gowcar/gboot/pkg/log"
 )
 
@@ -16,7 +16,7 @@ var applicationName string
 var Timeout int
 
 // @GetMapping("/api/static/config")
-func GlobalController(c *gboot.Context) error {
+func GlobalController(c *fiber.Ctx) error {
 	return c.SendString("Hello, World!")
 }
 
@@ -28,7 +28,7 @@ type UserController struct {
 }
 
 // @GetMapping("/")
-func (s *UserController) UserHandler(c *gboot.Context) error {
+func (s *UserController) UserHandler(c *fiber.Ctx) error {
 	log.Debug("applicationName is :%v", applicationName)
 	log.Debug("Timeout is :%v", Timeout)
 	log.Debug("DefaultUserName is :%v", DefaultUserName)
