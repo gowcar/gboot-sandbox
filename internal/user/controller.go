@@ -16,7 +16,7 @@ var applicationName string
 var Timeout int
 
 // @GetMapping("/api/static/config")
-func globalController(c *gboot.Context) error {
+func GlobalController(c *gboot.Context) error {
 	return c.SendString("Hello, World!")
 }
 
@@ -28,7 +28,7 @@ type UserController struct {
 }
 
 // @GetMapping("/")
-func (s *UserController) userHandler(c *gboot.Context) error {
+func (s *UserController) UserHandler(c *gboot.Context) error {
 	log.Debug("applicationName is :%v", applicationName)
 	log.Debug("Timeout is :%v", Timeout)
 	log.Debug("DefaultUserName is :%v", DefaultUserName)
