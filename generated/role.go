@@ -10,6 +10,10 @@ func (__ROLE__PKG__ANNOTATION__) PackageName() string {
 	return "role"
 }
 
+func (__ROLE__PKG__ANNOTATION__) AllAnnotations() []annotation.Annotation {
+	return nil
+}
+
 func (__ROLE__PKG__ANNOTATION__) PackageVariableAnnotations() []annotation.Annotation {
 	return nil
 }
