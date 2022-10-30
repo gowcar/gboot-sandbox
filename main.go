@@ -8,7 +8,6 @@ import (
 	"github.com/gowcar/gboot/pkg/log"
 	"github.com/gowcar/gboot/pkg/proxy"
 	"github.com/gowcar/gboot/pkg/ref"
-	"github.com/gowcar/gboot/pkg/web"
 	"reflect"
 )
 
@@ -45,7 +44,9 @@ func exec1() {
 	log.Debug("user.Controller = %v", reflect.TypeOf(controller).Elem().Name())
 	log.Debug("user.Controller.Kind = %v", reflect.TypeOf(controller).Kind())
 	log.Debug("user.Controller.fetchSize = %v", ref.GetFieldValue(controller, "FetchSize"))
-	web.AddHandler("/api/users", controller.UserHandler)
+	//fun := reflect.ValueOf(controller).Method(0).Interface().(fiber.Handler)
+	//web.AddHandler("GET", "/api/users", fun)
+	//web.AddHandler("GET", "/", fun)
 	gboot.Waitfor()
 }
 
