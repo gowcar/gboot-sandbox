@@ -1,7 +1,9 @@
 application:
   name: Training Platform
-  port: 5888
+  addr: :5888
   timeout: 500
+  web_framework: Fiber
+  db_framework: GORM
 
 log:
   log_level: debug
